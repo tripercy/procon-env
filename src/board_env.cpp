@@ -28,6 +28,10 @@ int Die::at(int x, int y)
     return _die[x][y];
 }
 
+std::string Die::toStr()
+{
+    // TODO: FILL THIS
+}
 /*
  * BOARD IMPLEMENTATION
  * */
@@ -48,6 +52,11 @@ int Board::at(int x, int y)
         return -1;
     }
     return _board[x][y];
+}
+
+std::string Board::toStr()
+{
+    // TODO: FILL THIS
 }
 
 /*
@@ -87,4 +96,9 @@ Board& Game::getInitBoard()
 Board& Game::getTargetBoard()
 {
     return this->targetBoard;
+}
+
+std::string Game::toStr()
+{
+    // TODO: FILL THIS
 }

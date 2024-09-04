@@ -14,6 +14,7 @@ public:
     Die();
     Die(std::vector<std::string> dieStr);
     int at(int x, int y);
+    std::string toStr();
 };
 
 /*
@@ -28,6 +29,7 @@ public:
     Board();
     Board(std::vector<std::string> boardStr, int w, int h);
     int at(int x, int y);
+    std::string toStr();
 };
 
 /*
@@ -50,4 +52,5 @@ public:
     std::vector<Die>& getDies();
     Board& getInitBoard();
     Board& getTargetBoard();
+    std::string toStr();
 };

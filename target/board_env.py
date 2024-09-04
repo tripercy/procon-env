@@ -433,6 +433,111 @@ class StringVector(object):
 
 # Register StringVector in _board_env:
 _board_env.StringVector_swigregister(StringVector)
+class DieVector(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _board_env.DieVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _board_env.DieVector___nonzero__(self)
+
+    def __bool__(self):
+        return _board_env.DieVector___bool__(self)
+
+    def __len__(self):
+        return _board_env.DieVector___len__(self)
+
+    def __getslice__(self, i, j):
+        return _board_env.DieVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _board_env.DieVector___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _board_env.DieVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _board_env.DieVector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _board_env.DieVector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _board_env.DieVector___setitem__(self, *args)
+
+    def pop(self):
+        return _board_env.DieVector_pop(self)
+
+    def append(self, x):
+        return _board_env.DieVector_append(self, x)
+
+    def empty(self):
+        return _board_env.DieVector_empty(self)
+
+    def size(self):
+        return _board_env.DieVector_size(self)
+
+    def swap(self, v):
+        return _board_env.DieVector_swap(self, v)
+
+    def begin(self):
+        return _board_env.DieVector_begin(self)
+
+    def end(self):
+        return _board_env.DieVector_end(self)
+
+    def rbegin(self):
+        return _board_env.DieVector_rbegin(self)
+
+    def rend(self):
+        return _board_env.DieVector_rend(self)
+
+    def clear(self):
+        return _board_env.DieVector_clear(self)
+
+    def get_allocator(self):
+        return _board_env.DieVector_get_allocator(self)
+
+    def pop_back(self):
+        return _board_env.DieVector_pop_back(self)
+
+    def erase(self, *args):
+        return _board_env.DieVector_erase(self, *args)
+
+    def __init__(self, *args):
+        _board_env.DieVector_swiginit(self, _board_env.new_DieVector(*args))
+
+    def push_back(self, x):
+        return _board_env.DieVector_push_back(self, x)
+
+    def front(self):
+        return _board_env.DieVector_front(self)
+
+    def back(self):
+        return _board_env.DieVector_back(self)
+
+    def assign(self, n, x):
+        return _board_env.DieVector_assign(self, n, x)
+
+    def resize(self, *args):
+        return _board_env.DieVector_resize(self, *args)
+
+    def insert(self, *args):
+        return _board_env.DieVector_insert(self, *args)
+
+    def reserve(self, n):
+        return _board_env.DieVector_reserve(self, n)
+
+    def capacity(self):
+        return _board_env.DieVector_capacity(self)
+    __swig_destroy__ = _board_env.delete_DieVector
+
+# Register DieVector in _board_env:
+_board_env.DieVector_swigregister(DieVector)
 class Die(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
