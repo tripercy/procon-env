@@ -11,6 +11,7 @@ namespace std {
    %template(IntVector) vector<int>;
    %template(DoubleVector) vector<double>;
    %template(StringVector) vector<string>;
+   %template(DieVector) vector<Die>;
 }
 
 %include src/board_env.h
