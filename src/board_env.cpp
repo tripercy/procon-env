@@ -1,6 +1,5 @@
 #include "board_env.h"
 
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -16,7 +15,6 @@ Die::Die() {
 }
 
 Die::Die(std::vector<std::string> dieStr) {
-    // TODO: FILL THIS
     _die.clear();
     for (auto x : dieStr) {
         std::vector<int> temp;
@@ -37,7 +35,6 @@ int Die::at(int x, int y) {
 }
 
 std::string Die::toStr() {
-    // TODO: FILL THIS
     std::string s = "";
     for (auto x : _die) {
         for (auto y : x) {
@@ -65,7 +62,6 @@ Board::Board() {
 Board::Board(std::vector<std::string> boardStr, int w, int h) {
     this->w = w;
     this->h = h;
-    // TODO: FILL THIS
     _board.clear();
     for (auto x : boardStr) {
         std::vector<int> temp;
@@ -85,7 +81,6 @@ int Board::at(int x, int y) {
 }
 
 std::string Board::toStr() {
-    // TODO: FILL THIS
     std::string s = "";
     for (auto x : _board) {
         for (auto y : x) {
@@ -128,20 +123,13 @@ void Board::setW(int w) {
  * */
 Game::Game(std::vector<std::string> initBoardStr, std::vector<std::string> targetStr, int w, int h, std::vector<Die> generalDies) {
     this->initialBoard = Board(initBoardStr, w, h);
-    this->targetBoard = Board(targetStr, w, h);
-    this->dies = generalDies;
-}
-
-int typeOfDie(Die die) {
-    if (die.at(0, 0) == 0) return 3;
-    if (die.at(0, 1) == 0) return 2;
-    return 1;
+    this->targetBoard  = Board(targetStr, w, h);
+    this->dies         = generalDies;
 }
 
 // Perform a die cut with dieIndex at top-left position (x, y)
 // with direction s (0: top, 1: bottom, 2: left, 3: right)
 double Game::cutDie(int dieIndex, int x, int y, int s) {
-    // TODO: FILL THIS
     Die cur_die = dies[dieIndex];
 
     int x1 = std::max(0, x), y1 = std::max(0, y);
@@ -236,11 +224,10 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
             }
         }
     }
-    return 0; 
+    return 0;
 }
 
 double Game::getReward() {
-    // TODO: FILL THIS
     return 0;
 }
 
@@ -257,6 +244,5 @@ Board& Game::getTargetBoard() {
 }
 
 std::string Game::toStr() {
-    // TODO: FILL THIS
     return getInitBoard().toStr();
 }
