@@ -547,6 +547,15 @@ class Die(object):
 
     def at(self, x, y):
         return _board_env.Die_at(self, x, y)
+
+    def toStr(self):
+        return _board_env.Die_toStr(self)
+
+    def getN(self):
+        return _board_env.Die_getN(self)
+
+    def setN(self):
+        return _board_env.Die_setN(self)
     __swig_destroy__ = _board_env.delete_Die
 
 # Register Die in _board_env:
@@ -560,6 +569,27 @@ class Board(object):
 
     def at(self, x, y):
         return _board_env.Board_at(self, x, y)
+
+    def getVal(self, x, y):
+        return _board_env.Board_getVal(self, x, y)
+
+    def setVal(self, x, y, val):
+        return _board_env.Board_setVal(self, x, y, val)
+
+    def toStr(self):
+        return _board_env.Board_toStr(self)
+
+    def getW(self):
+        return _board_env.Board_getW(self)
+
+    def getH(self):
+        return _board_env.Board_getH(self)
+
+    def setW(self, w):
+        return _board_env.Board_setW(self, w)
+
+    def setH(self, h):
+        return _board_env.Board_setH(self, h)
     __swig_destroy__ = _board_env.delete_Board
 
 # Register Board in _board_env:
@@ -571,8 +601,8 @@ class Game(object):
     def __init__(self, initBoardStr, targetStr, w, h, generalDies):
         _board_env.Game_swiginit(self, _board_env.new_Game(initBoardStr, targetStr, w, h, generalDies))
 
-    def cutDie(self, dieIndex, x, y):
-        return _board_env.Game_cutDie(self, dieIndex, x, y)
+    def cutDie(self, dieIndex, x, y, s):
+        return _board_env.Game_cutDie(self, dieIndex, x, y, s)
 
     def getReward(self):
         return _board_env.Game_getReward(self)
@@ -585,6 +615,9 @@ class Game(object):
 
     def getTargetBoard(self):
         return _board_env.Game_getTargetBoard(self)
+
+    def toStr(self):
+        return _board_env.Game_toStr(self)
     __swig_destroy__ = _board_env.delete_Game
 
 # Register Game in _board_env:
