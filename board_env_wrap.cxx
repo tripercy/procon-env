@@ -14028,6 +14028,77 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Die_toStr(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Die *arg1 = (Die *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::string result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_toStr" "', argument " "1"" of type '" "Die *""'"); 
+  }
+  arg1 = reinterpret_cast< Die * >(argp1);
+  result = (arg1)->toStr();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Die_getN(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Die *arg1 = (Die *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_getN" "', argument " "1"" of type '" "Die *""'"); 
+  }
+  arg1 = reinterpret_cast< Die * >(argp1);
+  result = (int)(arg1)->getN();
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Die_setN(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Die *arg1 = (Die *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_setN" "', argument " "1"" of type '" "Die *""'"); 
+  }
+  arg1 = reinterpret_cast< Die * >(argp1);
+  (arg1)->setN();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_Die(PyObject *self, PyObject *args) {
   PyObject *resultobj = 0;
   Die *arg1 = (Die *) 0 ;
@@ -14196,6 +14267,223 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Board_getVal(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject *swig_obj[3] ;
+  int result;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Board_getVal", 3, 3, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_getVal" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Board_getVal" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Board_getVal" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  result = (int)(arg1)->getVal(arg2,arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_setVal(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject *swig_obj[4] ;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Board_setVal", 4, 4, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_setVal" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Board_setVal" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Board_setVal" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  ecode4 = SWIG_AsVal_int(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Board_setVal" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  (arg1)->setVal(arg2,arg3,arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_toStr(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::string result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_toStr" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  result = (arg1)->toStr();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_getW(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_getW" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  result = (int)(arg1)->getW();
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_getH(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_getH" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  result = (int)(arg1)->getH();
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_setW(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Board_setW", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_setW" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Board_setW" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setW(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Board_setH(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Board *arg1 = (Board *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Board_setH", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Board, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Board_setH" "', argument " "1"" of type '" "Board *""'"); 
+  }
+  arg1 = reinterpret_cast< Board * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Board_setH" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setH(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_Board(PyObject *self, PyObject *args) {
   PyObject *resultobj = 0;
   Board *arg1 = (Board *) 0 ;
@@ -14297,6 +14585,7 @@ SWIGINTERN PyObject *_wrap_Game_cutDie(PyObject *self, PyObject *args) {
   int arg2 ;
   int arg3 ;
   int arg4 ;
+  int arg5 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
@@ -14305,11 +14594,13 @@ SWIGINTERN PyObject *_wrap_Game_cutDie(PyObject *self, PyObject *args) {
   int ecode3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
-  PyObject *swig_obj[4] ;
+  int val5 ;
+  int ecode5 = 0 ;
+  PyObject *swig_obj[5] ;
   double result;
   
   (void)self;
-  if (!SWIG_Python_UnpackTuple(args, "Game_cutDie", 4, 4, swig_obj)) SWIG_fail;
+  if (!SWIG_Python_UnpackTuple(args, "Game_cutDie", 5, 5, swig_obj)) SWIG_fail;
   res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Game, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_cutDie" "', argument " "1"" of type '" "Game *""'"); 
@@ -14330,7 +14621,12 @@ SWIGINTERN PyObject *_wrap_Game_cutDie(PyObject *self, PyObject *args) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Game_cutDie" "', argument " "4"" of type '" "int""'");
   } 
   arg4 = static_cast< int >(val4);
-  result = (double)(arg1)->cutDie(arg2,arg3,arg4);
+  ecode5 = SWIG_AsVal_int(swig_obj[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Game_cutDie" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  result = (double)(arg1)->cutDie(arg2,arg3,arg4,arg5);
   resultobj = SWIG_From_double(static_cast< double >(result));
   return resultobj;
 fail:
@@ -14428,6 +14724,30 @@ SWIGINTERN PyObject *_wrap_Game_getTargetBoard(PyObject *self, PyObject *args) {
   arg1 = reinterpret_cast< Game * >(argp1);
   result = (Board *) &(arg1)->getTargetBoard();
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Board, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_toStr(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::string result;
+  
+  (void)self;
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_toStr" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (arg1)->toStr();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
   return NULL;
@@ -14629,11 +14949,21 @@ static PyMethodDef SwigMethods[] = {
 	 { "DieVector_swiginit", DieVector_swiginit, METH_VARARGS, NULL},
 	 { "new_Die", _wrap_new_Die, METH_VARARGS, NULL},
 	 { "Die_at", _wrap_Die_at, METH_VARARGS, NULL},
+	 { "Die_toStr", _wrap_Die_toStr, METH_O, NULL},
+	 { "Die_getN", _wrap_Die_getN, METH_O, NULL},
+	 { "Die_setN", _wrap_Die_setN, METH_O, NULL},
 	 { "delete_Die", _wrap_delete_Die, METH_O, NULL},
 	 { "Die_swigregister", Die_swigregister, METH_O, NULL},
 	 { "Die_swiginit", Die_swiginit, METH_VARARGS, NULL},
 	 { "new_Board", _wrap_new_Board, METH_VARARGS, NULL},
 	 { "Board_at", _wrap_Board_at, METH_VARARGS, NULL},
+	 { "Board_getVal", _wrap_Board_getVal, METH_VARARGS, NULL},
+	 { "Board_setVal", _wrap_Board_setVal, METH_VARARGS, NULL},
+	 { "Board_toStr", _wrap_Board_toStr, METH_O, NULL},
+	 { "Board_getW", _wrap_Board_getW, METH_O, NULL},
+	 { "Board_getH", _wrap_Board_getH, METH_O, NULL},
+	 { "Board_setW", _wrap_Board_setW, METH_VARARGS, NULL},
+	 { "Board_setH", _wrap_Board_setH, METH_VARARGS, NULL},
 	 { "delete_Board", _wrap_delete_Board, METH_O, NULL},
 	 { "Board_swigregister", Board_swigregister, METH_O, NULL},
 	 { "Board_swiginit", Board_swiginit, METH_VARARGS, NULL},
@@ -14643,6 +14973,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "Game_getDies", _wrap_Game_getDies, METH_O, NULL},
 	 { "Game_getInitBoard", _wrap_Game_getInitBoard, METH_O, NULL},
 	 { "Game_getTargetBoard", _wrap_Game_getTargetBoard, METH_O, NULL},
+	 { "Game_toStr", _wrap_Game_toStr, METH_O, NULL},
 	 { "delete_Game", _wrap_delete_Game, METH_O, NULL},
 	 { "Game_swigregister", Game_swigregister, METH_O, NULL},
 	 { "Game_swiginit", Game_swiginit, METH_VARARGS, NULL},
