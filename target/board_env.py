@@ -551,11 +551,17 @@ class Die(object):
     def toStr(self):
         return _board_env.Die_toStr(self)
 
-    def getN(self):
-        return _board_env.Die_getN(self)
+    def getW(self):
+        return _board_env.Die_getW(self)
 
-    def setN(self):
-        return _board_env.Die_setN(self)
+    def getH(self):
+        return _board_env.Die_getH(self)
+
+    def setW(self, w):
+        return _board_env.Die_setW(self, w)
+
+    def setH(self, h):
+        return _board_env.Die_setH(self, h)
     __swig_destroy__ = _board_env.delete_Die
 
 # Register Die in _board_env:

@@ -26,11 +26,12 @@ Die::Die(std::vector<std::string> dieStr) {
         }
         _die.push_back(temp);
     }
-    n = _die.size();
+    w = _die.size();
+    h = _die[0].size();
 }
 
 int Die::at(int x, int y) {
-    if (!checkCoord(x, y, n, n)) {
+    if (!checkCoord(x, y, w, h)) {
         return -1;
     }
     return _die[x][y];
@@ -48,14 +49,21 @@ std::string Die::toStr() {
     return s;
 }
 
-int Die::getN() {
-    return this->n;
+int Die::getW() {
+    return this->w;
 }
 
-void Die::setN() {
-    this->n = _die.size();
+int Die::getH() {
+    return this->h;
 }
 
+void Die::setW(int w) {
+    this->w = w;
+}
+
+void Die::setH(int h) {
+    this->h = h;
+}
 /*
  * BOARD IMPLEMENTATION
  * */
@@ -129,13 +137,48 @@ void Board::setW(int w) {
 Game::Game(std::vector<std::string> initBoardStr, std::vector<std::string> targetStr, int w, int h, std::vector<Die> generalDies) {
     this->initialBoard = Board(initBoardStr, w, h);
     this->targetBoard = Board(targetStr, w, h);
-    this->dies = generalDies;
-}
+    this->dies.clear();
+    std::string first_die = "1";
+    dies.push_back(Die({first_die}));
 
-int typeOfDie(Die die) {
-    if (die.at(0, 0) == 0) return 3;
-    if (die.at(0, 1) == 0) return 2;
-    return 1;
+    for (int i = 1; i < 9; i++) {
+        int n = (1 << i);
+
+        std::vector<std::string> temp_die_1;
+        std::vector<std::string> temp_die_2;
+        std::vector<std::string> temp_die_3;
+        for (int j = 0; j < n; j++) {
+            std::string row_die_1 = "";
+            std::string row_die_2 = "";
+            std::string row_die_3 = "";
+
+            for (int k = 0; k < n; k++) {
+                row_die_1 += '1';
+
+                if (j & 1) {
+                    row_die_2 += '0';
+                } else {
+                    row_die_2 += '1';
+                }
+
+                if (k & 1) {
+                    row_die_3 += '0';
+                } else {
+                    row_die_3 += '1';
+                }
+            }
+            temp_die_1.push_back(row_die_1);
+            temp_die_2.push_back(row_die_2);
+            temp_die_3.push_back(row_die_3);
+        }
+        dies.push_back(Die(temp_die_1));
+        dies.push_back(Die(temp_die_2));
+        dies.push_back(Die(temp_die_3));
+    }
+
+    for (auto x : generalDies) {
+        dies.push_back(x);
+    }
 }
 
 // Perform a die cut with dieIndex at top-left position (x, y)
@@ -145,7 +188,7 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
     Die cur_die = dies[dieIndex];
 
     int x1 = std::max(0, x), y1 = std::max(0, y);
-    int x2 = std::min(x + cur_die.getN(), initialBoard.getW()), y2 = std::min(y + cur_die.getN(), initialBoard.getH());
+    int x2 = std::min(x + cur_die.getW(), initialBoard.getW()), y2 = std::min(y + cur_die.getH(), initialBoard.getH());
 
     if (s == 2) {
         for (int i = x1; i < x2; i++) {
@@ -236,7 +279,7 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
             }
         }
     }
-    return 0; 
+    return 0;
 }
 
 double Game::getReward() {

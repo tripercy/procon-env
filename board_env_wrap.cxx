@@ -14052,7 +14052,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Die_getN(PyObject *self, PyObject *args) {
+SWIGINTERN PyObject *_wrap_Die_getW(PyObject *self, PyObject *args) {
   PyObject *resultobj = 0;
   Die *arg1 = (Die *) 0 ;
   void *argp1 = 0 ;
@@ -14065,10 +14065,10 @@ SWIGINTERN PyObject *_wrap_Die_getN(PyObject *self, PyObject *args) {
   swig_obj[0] = args;
   res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_getN" "', argument " "1"" of type '" "Die *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_getW" "', argument " "1"" of type '" "Die *""'"); 
   }
   arg1 = reinterpret_cast< Die * >(argp1);
-  result = (int)(arg1)->getN();
+  result = (int)(arg1)->getW();
   resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
@@ -14076,22 +14076,83 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Die_setN(PyObject *self, PyObject *args) {
+SWIGINTERN PyObject *_wrap_Die_getH(PyObject *self, PyObject *args) {
   PyObject *resultobj = 0;
   Die *arg1 = (Die *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject *swig_obj[1] ;
+  int result;
   
   (void)self;
   if (!args) SWIG_fail;
   swig_obj[0] = args;
   res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_setN" "', argument " "1"" of type '" "Die *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_getH" "', argument " "1"" of type '" "Die *""'"); 
   }
   arg1 = reinterpret_cast< Die * >(argp1);
-  (arg1)->setN();
+  result = (int)(arg1)->getH();
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Die_setW(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Die *arg1 = (Die *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Die_setW", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_setW" "', argument " "1"" of type '" "Die *""'"); 
+  }
+  arg1 = reinterpret_cast< Die * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Die_setW" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setW(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Die_setH(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  Die *arg1 = (Die *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  (void)self;
+  if (!SWIG_Python_UnpackTuple(args, "Die_setH", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_Die, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Die_setH" "', argument " "1"" of type '" "Die *""'"); 
+  }
+  arg1 = reinterpret_cast< Die * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Die_setH" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setH(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -14950,8 +15011,10 @@ static PyMethodDef SwigMethods[] = {
 	 { "new_Die", _wrap_new_Die, METH_VARARGS, NULL},
 	 { "Die_at", _wrap_Die_at, METH_VARARGS, NULL},
 	 { "Die_toStr", _wrap_Die_toStr, METH_O, NULL},
-	 { "Die_getN", _wrap_Die_getN, METH_O, NULL},
-	 { "Die_setN", _wrap_Die_setN, METH_O, NULL},
+	 { "Die_getW", _wrap_Die_getW, METH_O, NULL},
+	 { "Die_getH", _wrap_Die_getH, METH_O, NULL},
+	 { "Die_setW", _wrap_Die_setW, METH_VARARGS, NULL},
+	 { "Die_setH", _wrap_Die_setH, METH_VARARGS, NULL},
 	 { "delete_Die", _wrap_delete_Die, METH_O, NULL},
 	 { "Die_swigregister", Die_swigregister, METH_O, NULL},
 	 { "Die_swiginit", Die_swiginit, METH_VARARGS, NULL},

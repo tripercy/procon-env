@@ -8,15 +8,17 @@
  */
 class Die {
     std::vector<std::vector<int>> _die;
-    int n;
+    int w, h;
 
    public:
     Die();
     Die(std::vector<std::string> dieStr);
     int at(int x, int y);
     std::string toStr();
-    int getN();
-    void setN();
+    int getW();
+    int getH();
+    void setW(int w);
+    void setH(int h);
 };
 
 /*
