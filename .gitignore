@@ -3,3 +3,4 @@ build/
 target/*.so
 main.*
 *.pyd
+.clang-format
