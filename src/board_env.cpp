@@ -1,5 +1,6 @@
 #include "board_env.h"
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -39,7 +40,8 @@ std::string Die::toStr() {
     std::string s = "";
     for (auto x : _die) {
         for (auto y : x) {
-            s += y;
+            char c = y + '0';
+            s += c;
         }
         s += "\n";
     }
@@ -133,6 +135,7 @@ Game::Game(std::vector<std::string> initBoardStr, std::vector<std::string> targe
     this->initialBoard = Board(initBoardStr, w, h);
     this->targetBoard = Board(targetStr, w, h);
     this->dies.clear();
+    this->numberOfCuts = 0;
     std::string first_die = "1";
     dies.push_back(Die({first_die}));
 
@@ -166,9 +169,9 @@ Game::Game(std::vector<std::string> initBoardStr, std::vector<std::string> targe
             temp_die_2.push_back(row_die_2);
             temp_die_3.push_back(row_die_3);
         }
-        dies.push_back(Die(temp_die_1));
         dies.push_back(Die(temp_die_2));
         dies.push_back(Die(temp_die_3));
+        dies.push_back(Die(temp_die_1));
     }
 
     for (auto x : generalDies) {
@@ -179,6 +182,7 @@ Game::Game(std::vector<std::string> initBoardStr, std::vector<std::string> targe
 // Perform a die cut with dieIndex at top-left position (x, y)
 // with direction s (0: top, 1: bottom, 2: left, 3: right)
 double Game::cutDie(int dieIndex, int x, int y, int s) {
+    this->numberOfCuts++;
     Die cur_die = dies[dieIndex];
 
     int x1 = std::max(0, x), y1 = std::max(0, y);
@@ -222,10 +226,10 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
                     initialBoard.setVal(i, j + temp.size(), initialBoard.at(i, j));
                 }
             }
-            int ct = 0;
+            int ct = temp.size() - 1;
             for (int j = 0; j < temp.size(); j++) {
                 initialBoard.setVal(i, j, temp[ct]);
-                ct++;
+                ct--;
             }
         }
     } else if (s == 1) {
@@ -244,10 +248,10 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
                     initialBoard.setVal(j + temp.size(), i, initialBoard.at(j, i));
                 }
             }
-            int ct = 0;
+            int ct = temp.size() - 1;
             for (int j = 0; j < temp.size(); j++) {
                 initialBoard.setVal(j, i, temp[ct]);
-                ct++;
+                ct--;
             }
         }
     } else {
@@ -274,6 +278,10 @@ double Game::cutDie(int dieIndex, int x, int y, int s) {
         }
     }
     return 0;
+}
+
+int Game::getNumberOfCuts() {
+    return this->numberOfCuts;
 }
 
 double Game::getReward() {
